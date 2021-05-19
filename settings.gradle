@@ -1,0 +1,5 @@
+include ':MarqueeTextView'
+include ':app'
+rootProject.name = "MarqueeTextView"
+
+project(':MarqueeTextView').projectDir = new File('./MarqueeTextView')
