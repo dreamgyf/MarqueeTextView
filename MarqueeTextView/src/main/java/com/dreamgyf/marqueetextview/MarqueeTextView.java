@@ -119,16 +119,21 @@ public class MarqueeTextView extends androidx.appcompat.widget.AppCompatTextView
 	protected void onDraw(Canvas canvas) {
 		if (mBitmap != null) {
 			if (mTextView.getMeasuredWidth() <= getWidth()) {
-				if (mLeftX < -getWidth()) {
-					mLeftX += getWidth();
+				int space = mSpace - (getWidth() - mTextView.getMeasuredWidth());
+				if (space < 0) {
+					space = 0;
+				}
+
+				if (mLeftX < -getWidth() - space) {
+					mLeftX += getWidth() + space;
 				}
 
 				canvas.drawBitmap(mBitmap, mLeftX, 0, getPaint());
 				if (mLeftX < 0) {
-					canvas.drawBitmap(mBitmap, getWidth() + mLeftX, 0, getPaint());
+					canvas.drawBitmap(mBitmap, getWidth() + mLeftX + space, 0, getPaint());
 				}
 			} else {
-				if (mLeftX < -mTextView.getMeasuredWidth() + mSpace) {
+				if (mLeftX < -mTextView.getMeasuredWidth() - mSpace) {
 					mLeftX += mTextView.getMeasuredWidth() + mSpace;
 				}
 
