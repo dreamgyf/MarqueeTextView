@@ -94,6 +94,16 @@ public class MarqueeTextView extends androidx.appcompat.widget.AppCompatTextView
 	}
 
 	@Override
+	public void setTextSize(int unit, float size) {
+		super.setTextSize(unit, size);
+		//执行父类构造函数时，如果AttributeSet中有textSize参数会先调用setTextSize，此时mTextView尚未初始化
+		if (mTextView != null) {
+			mTextView.setTextSize(size);
+			requestLayout();
+		}
+	}
+
+	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 		super.onMeasure(widthMeasureSpec, heightMeasureSpec);
 		mTextView.measure(MeasureSpec.UNSPECIFIED, heightMeasureSpec);
