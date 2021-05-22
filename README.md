@@ -17,7 +17,7 @@
 
 ## Layout properties 布局属性
 
-- app:space
+- `app:space`
 
 Description: The minimum distance between heads and tails of text scrolling\
 Type: dimension\
@@ -27,7 +27,7 @@ Default value: 100px
 类型：dimension\
 默认值：100px
 
-- app:speed
+- `app:speed`
 
 Description: Speed of text scrolling\
 Type: integer\
@@ -37,7 +37,7 @@ Default value: 1
 类型：integer\
 默认值：1
 
-## Public method 共有方法
+## Public method 公有方法
 
 `void startScroll()`
 
