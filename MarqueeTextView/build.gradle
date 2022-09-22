@@ -1,0 +1,48 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+def file = new File("${rootDir.parent}/maven_publish.gradle")
+if (file.exists()) {
+    apply from: file.absolutePath
+
+    publishModule {
+        groupId 'com.dreamgyf.android.ui.widget'
+        moduleName 'MarqueeTextView'
+        version '1.0'
+        description '走马灯式横向滚动的TextView（无论内容是否超过一行都会滚动）'
+        url 'https://github.com/dreamgyf/AndroidLibraries/tree/master/MarqueeTextView'
+    }
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.5.0'
+    implementation 'com.google.android.material:material:1.6.1'
+}
