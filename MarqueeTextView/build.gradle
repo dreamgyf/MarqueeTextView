@@ -10,7 +10,7 @@ if (file.exists()) {
     publishModule {
         groupId 'com.dreamgyf.android.ui.widget'
         moduleName 'MarqueeTextView'
-        version '1.0'
+        version '1.1'
         description '走马灯式横向滚动的TextView（无论内容是否超过一行都会滚动）'
         url 'https://github.com/dreamgyf/AndroidLibraries/tree/master/MarqueeTextView'
     }
@@ -45,4 +45,6 @@ android {
 dependencies {
     implementation libs.androidx.appcompat
     implementation libs.android.material
+
+    api libs.dreamgyf.Utils
 }

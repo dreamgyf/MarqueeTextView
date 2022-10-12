@@ -5,13 +5,13 @@
 
 **注：编译此项目请直接 clone 父工程 [AndroidLibraries](https://github.com/dreamgyf/AndroidLibraries)**
 
-```groovy
-implementation 'com.dreamgyf.android.ui.widget:MarqueeTextView:1.0'
-```
-
 ![Demo](./MarqueeTextView.gif)
 
 ## Get Started 快速使用
+
+```groovy
+implementation 'com.dreamgyf.android.ui.widget:MarqueeTextView:1.1'
+```
 
 ```XML
 <com.dreamgyf.marqueetextview.MarqueeTextView
@@ -36,12 +36,14 @@ Default value: 100px
 - `app:speed`
 
 Description: Speed of text scrolling\
-Type: integer\
-Default value: 1
+Type: float\
+Unit: DP\
+Default value: 0.5
 
 描述：文字滚动速度\
-类型：integer\
-默认值：1
+类型：float\
+单位：DP\
+默认值：0.5
 
 ## Public method 公有方法
 
